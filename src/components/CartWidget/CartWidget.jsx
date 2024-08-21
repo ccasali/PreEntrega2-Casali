@@ -1,13 +1,13 @@
-import { Box, Text } from "@chakra-ui/react"
+import { Text, Flex } from "@chakra-ui/react"
+import { CiShoppingCart } from "react-icons/ci";
 
 const CartWidget = () => {
     return (
-        <Box>
-            <Text>Esto es un texto</Text>
-            <Text>Numero hardcodeado</Text>
-        </Box>
-    )
-
-}
+        <Flex alignItems={"center"} height={"100%"} justifyContent={"center"} width={100}>
+            <CiShoppingCart size={30} />
+            <Text fontSize={"1.5rem"}>50</Text>
+        </Flex>
+    );
+};
 
 export default CartWidget;
