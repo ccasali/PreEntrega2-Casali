@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
+import NavBar from "./components/Navbar/NavBar"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <ChakraProvider>
-      
+      <NavBar/>
     </ChakraProvider>
-  )
+  );
 }
 
 export default App
