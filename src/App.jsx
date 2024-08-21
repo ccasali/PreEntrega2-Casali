@@ -8,7 +8,7 @@ function App() {
   return (
     <ChakraProvider>
       <NavBar/>
-        <ItemListContainer greeting="Bienvenidos a mi tienda"/>
+        <ItemListContainer greeting="Bienvenidos a mi mundo"/>
     </ChakraProvider>
   );
 }
