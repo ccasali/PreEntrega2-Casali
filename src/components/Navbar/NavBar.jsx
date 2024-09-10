@@ -12,9 +12,10 @@ import {
     Stack,
     useColorMode,
     Center,
-  } from '@chakra-ui/react'
-  import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-  import {CartWidget} from '../CartWidget';
+} from '@chakra-ui/react'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import {CartWidget} from '../CartWidget';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -22,7 +23,7 @@ export const NavBar = () => {
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                <Box fontWeight={"bold"} color={"#EAFF6A"}>Tienda de Cristóbal</Box>    
+                <Box fontWeight={"bold"} color={"#EAFF6A"}><Link to='/'>Tienda de Cristóbal</Link></Box>    
                 <Flex alignItems={'center'}>
                 <Stack direction={'row'} spacing={7}>
                     <CartWidget />
