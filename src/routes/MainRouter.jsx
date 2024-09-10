@@ -9,5 +9,3 @@ const MainRouter = () => {
     </BrowserRouter>
   )
 }
-
-export default MainRouter

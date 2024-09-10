@@ -1,6 +1,6 @@
 import {Box} from "@chakra-ui/react";
 
-const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({greeting}) => {
     return (
         <Box width={"100vw"}
         height={"90vh"}
@@ -11,5 +11,3 @@ const ItemListContainer = ({greeting}) => {
         </Box>
     )
 }
-
-export default ItemListContainer;
