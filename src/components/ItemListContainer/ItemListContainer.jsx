@@ -39,7 +39,7 @@ import {
                 {/* <Button variant="ghost" colorScheme="blue">
                   Add to cart
                 </Button> */}
-                {/*<Link to={`/item/${product.id}`}>Ir a Detalle</Link>*/}
+                <Link to={`/item/${product.id}`}>Ver Detalle</Link>
               </ButtonGroup>
             </CardFooter>
           </Card>
