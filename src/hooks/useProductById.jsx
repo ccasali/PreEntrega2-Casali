@@ -1,7 +1,7 @@
 import React from 'react'
 import { getProductById } from '../services/products.service'
 
-export const useProductById = () => {
+export const useProductById = (id) => {
     const [product, setProduct] = React.useState({})
     const [loading, setLoading] = React.useState(true)
 
