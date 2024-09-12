@@ -7,12 +7,14 @@ export const useProductById = () => {
 
     React.useEffect(() => {
         getProductById(id).then((response) => {
-            console.log(response.data)
+            setProduct(response.data)
         }).catch((error) => {
             console.error(error)
         }).finally(() => {
             setLoading(false)
         })
     }, [])
+
+    return { product, loading }
 }
 
