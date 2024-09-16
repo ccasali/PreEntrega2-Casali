@@ -19,11 +19,31 @@ import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+
+    const menuOptions = [
+        { id: 1, label: "Category 1" },
+        { id: 2, label: "Category 2" },
+        { id: 3, label: "Category 3" },
+        { id: 4, label: "Category 4" },
+      ];
+      
     return (
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                <Box fontWeight={"bold"} color={"#EAFF6A"}><Link to='/'>Tienda de Cristóbal</Link></Box>    
+                <Box fontWeight={"bold"} color={"#EAFF6A"}><Link to='/'>Tienda de Cristóbal</Link></Box>   
+                <Menu>
+                <Link to="/">Home</Link>
+                <Link to="/events" style={{marginLeft: 30}}>Eventos</Link>
+                <MenuButton as={Link} cursor="pointer" style={{marginLeft: 30}}>
+                    Dynamic Menu
+                </MenuButton>
+                <MenuList>
+                    {menuOptions.map((option) => (
+                    <MenuItem key={option.id}>{option.label}</MenuItem>
+                    ))}
+                </MenuList>
+                </Menu> 
                 <Flex alignItems={'center'}>
                 <Stack direction={'row'} spacing={7}>
                     <CartWidget />
