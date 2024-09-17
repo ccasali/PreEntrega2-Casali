@@ -40,8 +40,8 @@ export const NavBar = () => {
                     Categorías
                 </MenuButton>
                 <MenuList height={'400px'} overflow={'scroll'}> 
-                    {category.map((option) => (
-                    <MenuItem key={option.slug}>{option.name}</MenuItem>
+                    {category.map((category) => (
+                    <MenuItem key={category.slug}><Link to={`/category/${category.slug}`}>{category.name}</Link></MenuItem>
                     ))}
                 </MenuList>
                 </Menu> 
