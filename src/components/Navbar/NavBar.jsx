@@ -16,9 +16,12 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import {CartWidget} from '../CartWidget';
 import { Link } from 'react-router-dom';
+import { useCategory } from '../../hooks/useCategory';
 
 export const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+
+    const { category}  = useCategory();
 
     const menuOptions = [
         { id: 1, label: "Category 1" },
@@ -34,11 +37,11 @@ export const NavBar = () => {
                 <Box fontWeight={"bold"} color={"#EAFF6A"}><Link to='/'>Tienda de Cristóbal</Link></Box>   
                 <Menu>
                 <MenuButton as={Link} cursor="pointer" style={{marginLeft: 30}}>
-                    Dynamic Menu
+                    Categorías
                 </MenuButton>
-                <MenuList>
-                    {menuOptions.map((option) => (
-                    <MenuItem key={option.id}>{option.label}</MenuItem>
+                <MenuList height={'400px'} overflow={'scroll'}> 
+                    {category.map((option) => (
+                    <MenuItem key={option.slug}>{option.name}</MenuItem>
                     ))}
                 </MenuList>
                 </Menu> 
