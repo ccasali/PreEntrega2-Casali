@@ -45,6 +45,7 @@ export const NavBar = () => {
                     ))}
                 </MenuList>
                 </Menu> 
+                <Button onClick={() => createProductsFirestore('products')}>Crear productos</Button>
                 <Flex alignItems={'center'}>
                 <Stack direction={'row'} spacing={7}>
                     <CartWidget />
