@@ -3,7 +3,7 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase'
 
 
-export const useProducts = () => {
+export const useItemsCollection = (categoryName) => {
     const [products, setProducts] = React.useState([]) // 1ro estado
     const [loading, setLoading] = React.useState(true)// loading mientras espera los datos
     const [error, setError] = React.useState(false)
