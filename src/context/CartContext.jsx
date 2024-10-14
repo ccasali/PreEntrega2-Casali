@@ -1,12 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 
-export const CartContext = createContext();
+export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-  const [cartState, setCartState] = useState([]);
+  const [cartState, setCartState] = useState([])
 
   const addItem = (product, qtyItem) => {
-    const existingProduct = cartState.find((item) => item.id === product.id);
+    const existingProduct = cartState.find((item) => item.id === product.id)
 
     if (existingProduct) {
       setCartState(
@@ -15,11 +15,11 @@ export const CartProvider = ({ children }) => {
             ? { ...item, qtyItem: item.qtyItem + 1 }
             : item
         )
-      );
+      )
     } else {
       setCartState([...cartState, { ...product, qtyItem }]);
     }
-  };
+  }
 
   const removeItem = (product) => {
     const existingProduct = cartState.find((item) => item.id === product.id);
@@ -33,14 +33,14 @@ export const CartProvider = ({ children }) => {
               ? { ...item, qtyItem: item.qtyItem - 1 }
               : item
           )
-        );
+        )
       }
     }
-  };
+  }
 
   const deleteItem = (product) => {
     setCartState(cartState.filter((item) => item.id !== product.id));
-  };
+  }
 
   return (
     <CartContext.Provider
@@ -48,5 +48,5 @@ export const CartProvider = ({ children }) => {
     >
       {children}
     </CartContext.Provider>
-  );
-};
+  )
+}

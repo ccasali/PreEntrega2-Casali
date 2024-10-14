@@ -1,12 +1,27 @@
+import { useContext } from "react"
+
 import { Text, Flex } from "@chakra-ui/react"
-import { CiShoppingCart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci"
+import { CartContext } from "../../context/"
+import { Link } from "react-router-dom"
 
 export const CartWidget = () => {
+    const { cartState } = useContext(CartContext)
+  
+    const qtyTotalItems = cartState.reduce((acc, item) => acc + item.qtyItem, 0)
+  
     return (
-        <Flex alignItems={"center"} height={"100%"} justifyContent={"center"} width={100}>
-            <CiShoppingCart size={30} />
-            <Text fontSize={"1.5rem"}>0</Text>
-        </Flex>
-    );
-};
+      <Flex
+        alignItems={"center"}
+        height={"100%"}
+        justifyContent={"space-between"}
+        width={"60px"}
+      >
+        <BsMinecart size={30} />
+        <Link to="/checkout">
+          <Text fontSize={"1.5rem"}>{qtyTotalItems}</Text>
+        </Link>
+      </Flex>
+    )
+  }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home, Item, Category } from '../pages'
+import { Category, Checkout, Home, Item, Memo, Payment } from '../pages'
 import { NavBar } from '../components'
 
 
@@ -12,7 +12,9 @@ export const MainRouter = () => {
             <Route path='/' element={<Home />} />
             <Route path='/item/:id' element={<Item />} />
             <Route path='/category/:categoryId' element={<Category />} />
-
+            <Route path="/memo" element={<Memo />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/payment" element={<Payment />} />
         </Routes>
     </BrowserRouter>
   )
