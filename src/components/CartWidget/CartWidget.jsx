@@ -5,7 +5,7 @@ export const CartWidget = () => {
     return (
         <Flex alignItems={"center"} height={"100%"} justifyContent={"center"} width={100}>
             <CiShoppingCart size={30} />
-            <Text fontSize={"1.5rem"}>50</Text>
+            <Text fontSize={"1.5rem"}>0</Text>
         </Flex>
     );
 };

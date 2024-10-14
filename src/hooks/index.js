@@ -1,3 +1,3 @@
-export * from './useProducts';
+export * from './useItemsCollection';
 export * from './useProductById';
-export * from './useProductsbyCategory';
+export * from './useProductsByCategory';

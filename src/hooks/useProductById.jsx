@@ -21,4 +21,3 @@ export const useProductById = (id) => {
 
     return { product, loading }
 }
-

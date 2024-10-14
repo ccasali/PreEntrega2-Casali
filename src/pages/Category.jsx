@@ -1,14 +1,17 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import { ItemListContainer } from '../components';
-import { useCategory } from '../hooks/useCategory';
-import { useProductsbyCategory } from '../hooks/useProductsbyCategory';
+import { useProductsByCategory } from '../hooks/useProductsByCategory';
+import { Spinner } from "@chakra-ui/react"
 
 export const Category = () => {
-    const { categoryId } = useParams();
+  const { categoryId } = useParams();
 
-    const { products } = useProductsbyCategory(categoryId);
-  return (
-    <ItemListContainer products={products}/>
-  )
+  const { products, loading } = useProductsByCategory(categoryId);
+
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return <ItemListContainer products={products} />;
+  }
 }
