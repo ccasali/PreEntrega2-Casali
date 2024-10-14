@@ -9,6 +9,7 @@ export const CartProvider = ({ children }) => {
     const existingProduct = cartState.find((item) => item.id === product.id)
 
     if (existingProduct) {
+      
       setCartState(
         cartState.map((item) =>
           item.id === product.id
@@ -17,16 +18,19 @@ export const CartProvider = ({ children }) => {
         )
       )
     } else {
-      setCartState([...cartState, { ...product, qtyItem }]);
+
+      setCartState([...cartState, { ...product, qtyItem }])
     }
   }
 
   const removeItem = (product) => {
-    const existingProduct = cartState.find((item) => item.id === product.id);
+    const existingProduct = cartState.find((item) => item.id === product.id)
     if (existingProduct) {
+
       if (existingProduct.qtyItem === 1) {
-        setCartState(cartState.filter((item) => item.id !== product.id));
+        setCartState(cartState.filter((item) => item.id !== product.id))
       } else {
+
         setCartState(
           cartState.map((item) =>
             item.id === product.id
@@ -39,7 +43,7 @@ export const CartProvider = ({ children }) => {
   }
 
   const deleteItem = (product) => {
-    setCartState(cartState.filter((item) => item.id !== product.id));
+    setCartState(cartState.filter((item) => item.id !== product.id))
   }
 
   return (
